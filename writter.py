@@ -84,10 +84,27 @@ class Writter():
 
 
 
-	@classmethod
-	def ask_something(cls, text):
-		return '\r\n- {}'.format(text)
+	@staticmethod
+	def input(question):
+		"""just format an input()"""
+		return input('{}? ...'.format(question))
 
+
+
+
+	@staticmethod
+	def ask_int(question):
+		"""ask an integer, try to convert input and return it in integer"""
+		output = str()
+		while output.__class__ != int().__class__ :
+			try:
+				output = Writter.input('{} (must be an integer)'.format(question) )
+				output = int(output)
+			except ValueError:
+				output = str()
+
+		return output
+			
 
 
 	@printed
