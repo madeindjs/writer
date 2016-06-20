@@ -1,5 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+	Writter
+	==============
+
+	a simply class used to normalize all input/output in console (like title,
+	sub-title, etc..)
+
+	author: Rousseau Alexandre
+
+	created: 2016/06/17
+
+"""
+
 
 class Writter():
 	"""a class to normalize all output in console"""
@@ -59,7 +72,7 @@ class Writter():
 			1 - I'm
 			2 - a sorted
 			3 - list"""
-		i = 1 
+		i = 0 
 		output = str()
 		for arg in args:
 			output += "\t{n} - {text}\r\n".format(n=i,text=arg)
