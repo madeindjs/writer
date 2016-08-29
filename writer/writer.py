@@ -17,16 +17,7 @@
 
 class Writer():
 	"""a class to normalize all output in console"""
-	verbose = False
 	width = 80
-
-
-	def printed(method):
-		"""decorator to display this outpout only if verbose is True """
-		def wrapper(cls, *args):
-			if cls.verbose:
-				print(method(cls, *args))
-		print(wrapper)
 
 
 
@@ -37,8 +28,9 @@ class Writer():
 		-------------------
 		    I'm a title
 		-------------------"""
-		print("\r\n{line}\r\n{title}\r\n{line}\r\n".format( line=cls.line(), 
-									title=Writer.center_text(title) ) )
+		Writer.line()
+		Writer.center_text(title)
+		Writer.line()
 
 
 
@@ -48,7 +40,8 @@ class Writer():
 
 		I'm a sub-title
 		-------------------"""
-		print("{title}\r\n{line}".format( line=cls.line(),  title=title) )
+		print(title)
+		Writer.line()
 
 
 
@@ -74,7 +67,7 @@ class Writer():
 		i = 0 
 		output = str()
 		for arg in args:
-			print("\t{n} - {text}\r\n".format(n=i,text=arg))
+			print("\t{n} - {text}".format(n=i,text=arg))
 			i+=1
 
 
@@ -118,14 +111,12 @@ class Writer():
 			
 
 
-	@printed
 	@classmethod
 	def event(cls, text):
-		print('\r\n- {}'.format(text) )
+		print('[x] {}'.format(text) )
 
 
 
-	@printed
 	@classmethod
 	def sql_log(cls, sql_query, data=None):
 		"""print a SQL Log"""
