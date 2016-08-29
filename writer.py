@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-	Writter
+	Writer
 	==============
 
 	a simply class used to normalize all input/output in console (like title,
@@ -10,11 +10,12 @@
 	author: Rousseau Alexandre
 
 	created: 2016/06/17
+	created: 2016/08/29
 
 """
 
 
-class Writter():
+class Writer():
 	"""a class to normalize all output in console"""
 	verbose = False
 	width = 80
