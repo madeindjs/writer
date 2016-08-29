@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 import writer
 
 setup(
-    name='writer.py',
+    name='Writer',
     version=writer.__version__,
 
 

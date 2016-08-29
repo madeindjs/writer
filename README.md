@@ -1,4 +1,4 @@
-Scripts
+Writer
 =======
 
 A simply class to normalize all outputs in console
