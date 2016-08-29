@@ -112,8 +112,12 @@ class Writer():
 
 
 	@classmethod
-	def event(cls, text):
-		print('[x] {}'.format(text) )
+	def event(cls, text, status=True):
+		if status:
+			print('[x] {}'.format(text) )
+		else:
+			print('[ ] {}'.format(text) )
+
 
 
 
