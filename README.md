@@ -1,50 +1,64 @@
-Writter
+Scripts
 =======
 
-A simply class used to normalize all input/output in console (like title, sub-title, etc..).
+A simply class to normalize all outputs in console
 
-author: Rousseau Alexandre
+Instalation
+-----------
 
-created: 2016/06/17
+### Old School
 
+    git clone https://github.com/madeindjs/writer.git
+    cd writter
+    python setup.py install
 
-## Installing
+### New School
 
-
-Writter may be installed using `setuptools`, `distribute`, or `pip`:
-
-    pip install path.py
-
-The latest release is always updated to the [Python Package Index](http://pypi.python.org/pypi/path.py).
-
-You may also always download the source distribution (zip/tarball), extract
-it, and run `python setup.py` to install it.
+    pip install writer
 
 
+### API usage
 
-## Development
+
+~~~Python
+>>> from writer import Writer
+>>> Writer.title('Hellow World!')
+--------------------------------------------------------------------------------
+                                 Hellow World!                                 
+--------------------------------------------------------------------------------
+>>> Writer.unsorted_list('hello', 'world', 'how r U?')
+    -   hello
+    -   world
+    -   how r U?
+>>> Writer.sorted_list('hello', 'world', 'how r U?')
+    0 - hello
+    1 - world
+    2 - how r U?
+>>> Writer.ask_int('give me an integer!')
+give me an integer! (must be an integer)? ...a
+give me an integer! (must be an integer)? ...b
+give me an integer! (must be an integer)? ...1
+>>> Writer.event('Something hapend..')
+[x] Something hapend..
+>>> Writer.event('Something goes wrong..', False)
+[ ] Something goes wrong..
+~~~
+
+To Do
+-----
+
+* add units test (I know. I should begin with this..)
+* support colors
+
+Author
+------
+
+[Rousseau Alexandre][madeindjs]
+
+License
+-------
+
+[MIT](https://opensource.org/licenses/MIT)
 
 
-To install an in-development version, use the Github links to clone or
-download a snapshot of the latest code. Alternatively, if you have git
-installed, you may be able to use `pip` or `easy_install` to install directly from
-the repository:
-
-    pip install git+https://github.com/jaraco/path.py.git
-
-Testing
-=======
-
-Tests are continuously run by Travis-CI: |BuildStatus|_
-
-.. |BuildStatus| image:: https://secure.travis-ci.org/jaraco/path.py.png
-.. _BuildStatus: http://travis-ci.org/jaraco/path.py
-
-To run the tests, refer to the ``.travis.yml`` file for the steps run on the
-Travis-CI hosts.
-
-Releasing
-=========
-
-Tagged releases are automatically published to PyPI by Travis-CI, assuming
-the Python 3 build passes.
+[madeindjs]: https://github.com/madeindjs/
