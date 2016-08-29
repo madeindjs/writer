@@ -91,7 +91,7 @@ class Writer():
 	@staticmethod
 	def input(question):
 		"""just format an input()"""
-		print(input('{}? ...'.format(question)) )
+		return input('{}? ...'.format(question))
 
 
 
@@ -99,15 +99,15 @@ class Writer():
 	@staticmethod
 	def ask_int(question):
 		"""ask an integer, try to convert input and print it in integer"""
-		output = str()
-		while output.__class__ != int().__class__ :
+		input_value = str()
+		while input_value.__class__ != int().__class__ :
 			try:
-				output = Writer.input('{} (must be an integer)'.format(question) )
-				output = int(output)
+				input_value = Writer.input('{} (must be an integer)'.format(question) )
+				input_value = int(input_value)
 			except ValueError:
-				output = str()
+				input_value = str()
 
-		print(output)
+		return input_value
 			
 
 
