@@ -38,7 +38,7 @@ class Writer():
 		    I'm a title
 		-------------------"""
 		print("\r\n{line}\r\n{title}\r\n{line}\r\n".format( line=cls.line(), 
-									title=Writter.center_text(title) ) )
+									title=Writer.center_text(title) ) )
 
 
 
@@ -109,7 +109,7 @@ class Writer():
 		output = str()
 		while output.__class__ != int().__class__ :
 			try:
-				output = Writter.input('{} (must be an integer)'.format(question) )
+				output = Writer.input('{} (must be an integer)'.format(question) )
 				output = int(output)
 			except ValueError:
 				output = str()
